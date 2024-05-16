@@ -3,12 +3,9 @@
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background-color: lightgray;
+  background-color: #EAF0F3;
   height: 389px;
   width: 300px;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: black;
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   display: none;
 }
@@ -30,12 +27,11 @@
   vertical-align: middle;
 }
 #chat-bot header {
-  background-color: #CC745A;
-  border-radius: 8px;
+  background-color: #30455C;
 }
 #chat-bot header p {
   width: 220px;
-  text-align: center;
+  text-align: right;
   color: white;
   font-weight: 700;
 }
