@@ -4,7 +4,7 @@
   bottom: 20px;
   left: 20px;
   background-color: #EAF0F3;
-  height: 389px;
+  height: 390px;
   width: 300px;
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   display: none;
@@ -28,13 +28,38 @@
 }
 #chat-bot header {
   background-color: #30455C;
+  display: inline-flex;
+  flex: auto;
+  height: 25%;
 }
-#chat-bot header p {
-  width: 220px;
-  text-align: right;
+#header-logo {
+  object-fit: contain;
+  border:  solid #CC745A;
+}
+
+#chat-bot header span {
+  width: 150px;
+  text-align: center;
   color: white;
   font-weight: 700;
 }
+
+#chat-bot header button {
+  vertical-align: middle;
+}
+
+#chat-bot header div {
+  margin-left: 10px;
+  margin-right: 0px;
+  padding: 0px;
+  
+}
+
+#short-intro {
+  font-size: 10px;
+  overflow-x: wrap;
+}
+
 .chat-bot-button {
   all: unset;
   border-radius: 3px;
