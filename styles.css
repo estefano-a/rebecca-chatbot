@@ -28,20 +28,20 @@
 }
 #chat-bot header {
   background-color: #30455C;
-  display: inline-flex;
-  flex: auto;
+  display: flex;
+  justify-content: space-between;
   height: 25%;
 }
+
 #header-logo {
   object-fit: contain;
-  border:  solid #CC745A;
 }
 
 #chat-bot header span {
   width: 150px;
-  text-align: center;
   color: white;
   font-weight: 700;
+  text-align: left;
 }
 
 #chat-bot header button {
@@ -52,12 +52,20 @@
   margin-left: 10px;
   margin-right: 0px;
   padding: 0px;
+  margin-top: 15px;
   
 }
 
 #short-intro {
   font-size: 10px;
   overflow-x: wrap;
+  margin-top: 10px;
+}
+
+#chat-bot-close {
+  float:inline-end;
+  margin-right: 15px;
+  margin-bottom: 35px;
 }
 
 .chat-bot-button {
@@ -67,6 +75,7 @@
 .chat-bot-button:hover {
   background-color: lightgray;
   opacity: 20%;
+  background: no-repeat;
 }
 #chat-bot-extra {
   margin-left: 15px;
