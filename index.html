@@ -16,13 +16,14 @@
               <button id="live-chat-start">Talk to a live representative</button>
             </section>
           </section>
-          <img id= "header-logo" src = "images/twenty-four-seven-teach-logo.png" width = "50px" alt = "24/7 Teach logo">
+          <img id= "header-logo" src = "New Images/orangelogo.png" width = "40px" alt = "24/7 Teach logo">
           <div>
             <span>Rebecca-AI</span>
             <span id = "short-intro"> Our AI powered chatbot can assist you. </span>
           </div>
-          <button id="chat-bot-close" class="chat-bot-button"><img src="images/dash.png" width="20px" alt="dash"></button>
+          <button id="chat-bot-close" class="chat-bot-button"><img src="New Images/x-icon.png" width="20px" alt="x"></button>
         </header>
+
         <section id="chat-bot-form">
           <p>Welcome to 24/7 live support. Our bot should be able to answer any questions you might have, but our customer support team is always available to help! Before we begin, please provide us with your email and name to better support you.</p><br/>
           <form id="start-chat-submit" onsubmit="return false">
@@ -31,20 +32,31 @@
             <button type="submit">Start the chat</button>
           </form>
         </section>
+
         <section id="chat-bot-text">
           <section id="messages">
-            <img src="images/twenty-four-seven-teach-logo.png" width="30px" alt="24/7-teach-logo">
-            <p>Hi, my name is Rebecca. How may I help you today?</p>
+            <img src="images/orangelogo.png" width="30px" alt="24/7-teach-logo">
+            <p>
+              Welcome to the chat! I'm here to help you. Click the <img src = "images/questionmark.png" width = "20px"> icon if you need further assisstance.
+              <b><br>Stuck? Try a prompt: 
+                <button form = "question-submit" id = "question"><u><b>What is 24/7 Teach's goal?</b></u><img src = "images/arrow.png" width = "15px"></button>
+                <button form = "question-submit" id = "question"><u><b>How much does the UX/UI design course cost?</b></u><img src = "images/arrow.png" width = "15px"></button>
+                <button form = "question-submit" id = "question"><u><b>What types of course does 24/7 Teach offer?</b></u><img src = "images/arrow.png" width = "15px"></button>
+              </b>
+            </p>
+              
           </section>
           <form id="question-submit" onsubmit="return false">
-            <input id="question" name="question" type="text">
+            <input id="question" name="question" type="text"  placeholder = "Send a message">
             <button type="submit"><img src="images/send-icon.png" width="20px" alt="send-icon"></button>
           </form>
         </section>
       </section>
+
       <section id="closed-form">
         <img src="images/chat-box.png" alt="chat-box" width="30px">
       </section>
+
     </section>
   </body>
 </html>
