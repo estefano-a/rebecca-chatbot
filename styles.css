@@ -36,6 +36,11 @@
 #header-logo {
   object-fit: contain;
   margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+#headere-buttons {
+  
 }
 
 #chat-bot header span {
