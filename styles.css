@@ -95,10 +95,26 @@
 #chat-bot-text {
   display: none;
 }
+
+#chat-bot-text button{
+  border: none;
+  color: black;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0px;
+  padding: none;
+}
+
+#chat-bot-text button:hover{
+  opacity: 60%;
+}
+
 #chat-bot-form p {
   margin: 0;
   font-size: 14px;
 }
+
 /* Form buttons */
 input, button[type="submit"] {
   width: 100%;
@@ -110,7 +126,7 @@ button[type="submit"] {
   color: white;
   font-weight: 700;
   border-style: none;
-  border-radius: 5px;
+  border-radius: 20px;
   font-size: 16px;
   height: 39px;
 }
