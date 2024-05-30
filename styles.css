@@ -4,7 +4,7 @@
   bottom: 20px;
   left: 20px;
   background-color: #EAF0F3;
-  height: 390px;
+  height: 420px;
   width: 300px;
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   display: none;
@@ -35,12 +35,21 @@
 
 #header-logo {
   object-fit: contain;
-  margin-bottom: 10px;
-  margin-left: 10px;
+  margin-bottom: 14px;
+  margin-left: 15px;
 }
 
-#headere-buttons {
-  
+#header-buttons {
+  border-color: white;
+  border-style: solid;
+  height: 65%;
+  width: 40px;
+  float:inline-end;
+  margin-right: 40px;
+  margin-bottom: 25px;
+  margin-top: 10px;
+  border-radius: 8px;
+  background-color: #63697A;
 }
 
 #chat-bot header span {
@@ -55,23 +64,16 @@
 }
 
 #chat-bot header div {
-  margin-left: 10px;
+  margin-left: 20px;
   margin-right: 0px;
   padding: 0px;
   margin-top: 15px;
-  
 }
 
 #short-intro {
   font-size: 10px;
   overflow-x: wrap;
   margin-top: 10px;
-}
-
-#chat-bot-close {
-  float:inline-end;
-  margin-right: 15px;
-  margin-bottom: 35px;
 }
 
 .chat-bot-button {
@@ -84,10 +86,16 @@
   background: no-repeat;
 }
 #chat-bot-extra {
-  margin-left: 15px;
   position: relative;
   display: inline-block;
+  margin-left: 16%;
+  margin-top: 12px;
 }
+
+#chat-bot-close {
+  margin-left: 26%;
+}
+
 /* Form */
 #chat-bot-form, #chat-bot-text {
   margin: 10px;
@@ -167,23 +175,50 @@ button[type="submit"]:hover {
   height: 31.5px;
 }
 /* Drop Down */
-#chat-bot-drop-down-content {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  margin-top: 10px;
+#chat-bot-drop-down {
+  border: solid;
+  border-color: white;
+  height: 50%;
+  border-radius: 0px 0px 8px 8px;
   width: 100%;
+  margin-left: -1.5px;
+  margin-top: 12px;
 }
+
+#chat-bot-drop-down-content {
+  display: grid;
+  position:fixed;
+  z-index: 1;
+  margin-top: 8px;
+  width: 300px;
+  left: 0;
+  margin-left: 20px;
+}
+
+#chat-bot-drop-down-content::before{
+  content: " ";
+  position: absolute;
+  top: -15px;
+  left: 79%;
+  border: 10px solid transparent;
+  border-bottom-color: #A7B1C2;
+}
+
 #chat-bot-drop-down-content * {
   all: unset;
-  background-color: #EAF0F3;
+  background-color: #A7B1C2;
   font-size: 14px;
-  margin: 0;
   padding: 5px;
   font-weight: 400;
   width: 100%;
   box-sizing: border-box;
+  float: left;
+  color: white;
+  text-align: center;
+  height: 25px;
+  vertical-align: middle;
 }
+
 #chat-bot-drop-down-content button:hover {
-  background-color: #c7cccf;
+  color: black;
 }
