@@ -97,16 +97,21 @@
 }
 
 /* Form */
-#chat-bot-form, #chat-bot-text {
+#chat-bot-form {
   margin: 10px;
   font-size: 14px;
-  background-color: white;
+  background-color: #EAF0F3;
   border-radius: 5px;
   padding: 5px;
   height: 305.5px;
 }
 #chat-bot-text {
   display: none;
+  font-size: 14px;
+  background-color: #EAF0F3;
+  border-radius: 5px;
+  padding: 5px 5px 0px 0px;
+  height: 300px;
 }
 
 #chat-bot-text button{
@@ -158,21 +163,24 @@ button[type="submit"]:hover {
   grid-template-rows: min-content;
   gap: 5px;
   overflow-y: scroll;
-  max-height: 269px;
+  max-height: 250px;
+  margin: 10px;
 }
 #messages p {
   margin: 0;
   padding: 5px;
   border-style: solid;
   border-radius: 5px;
-  background-color: rgb(240, 238, 238)
+  background-color: #EAF0F3;
+  max-width: 200px;
+  font-size: 13px;
 }
 /* Fancy Scrollbar */
 #messages::-webkit-scrollbar {
   width: 5px;
 }
 #messages::-webkit-scrollbar-track {
-  background: white;
+  background: #EAF0F3;
 }
 #messages::-webkit-scrollbar-thumb {
   background: #888;
@@ -184,13 +192,25 @@ button[type="submit"]:hover {
 /* Submitting Questions */
 #question-submit {
   position: absolute;
-  bottom: 15px;
+  bottom: -4px;
   width: 230px;
+  left: 5px;
+  padding: 5px;
 }
+
+#submission-border {
+  background-color: #30455C;
+  height: 45px;
+  bottom: -5px;
+  width: 100%;
+}
+
 #question-submit button[type="submit"] {
   position: absolute;
   width: 40px;
   height: 31.5px;
+  border-radius: 10px;
+  left: 240px;
 }
 /* Drop Down */
 #chat-bot-drop-down {
