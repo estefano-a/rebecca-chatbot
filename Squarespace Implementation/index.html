@@ -9,6 +9,7 @@
   <section id="chat-bot">
     <section id="open-form">
       <header>
+        <!-- Once you've retrieved the image url for image named 'orangelogo.png' replace the image src with that url here. -->
         <img id="header-logo" src="https://static1.squarespace.com/static/63c867491abe131843b09837/t/666101dbc1213b64291b77d0/1717633499269/orangelogo.png" width="40px" alt="24/7 Teach logo">
         <div>
           <span>Rebecca-AI</span>
@@ -16,6 +17,7 @@
         </div>
         <section id="header-buttons">
           <button id="chat-bot-close" class="chat-bot-button">
+            <!-- The image source for the element below needs to replaced with the new image url for 'x-icon.png' -->
             <img src="https://static1.squarespace.com/static/63c867491abe131843b09837/t/66610245ec63620c508bbaae/1717633605834/x-icon.png" width="15px" alt="x">
           </button>
         </section>
@@ -32,19 +34,23 @@
       </section>
       <section id="chat-bot-text">
         <section id="messages">
+          <!-- The image source for the element below needs to replaced with the new image url for 'orangelogo.png' -->
           <img src="https://static1.squarespace.com/static/63c867491abe131843b09837/t/666101dbc1213b64291b77d0/1717633499269/orangelogo.png" width="30px" alt="24/7-teach-logo">
           <p>Welcome to the chat! My name is Rebecca and I'm here to help you.<br>
             <b>Stuck? Try a prompt:</b>
             <button id="prompt1" value="What is 24/7 Teach's goal?">
               <u><b>What is 24/7 Teach's goal?</b></u>
+              <!-- The image source for the element below needs to replaced with the new image url for 'arrow-icon.png' -->
               <img src="https://static1.squarespace.com/static/63c867491abe131843b09837/t/666102622741f53c52efe2a3/1717633634608/arrow-icon.png" width="15px" alt="arrow-icon">
             </button>
             <button id="prompt2" value="How much does the UX/UI design course cost?">
               <u><b>How much does the UX/UI design course cost?</b></u>
+              <!-- The image source for the element below needs to replaced with the new image url for 'arrow-icon.png' -->
               <img src="https://static1.squarespace.com/static/63c867491abe131843b09837/t/666102622741f53c52efe2a3/1717633634608/arrow-icon.png" width="15px" alt="arrow-icon">
             </button>
             <button id="prompt3" value="What types of course does 24/7 Teach offer?">
               <u><b>What types of course does 24/7 Teach offer?</b></u>
+              <!-- The image source for the element below needs to replaced with the new image url for 'arrow-icon.png' -->
               <img src="https://static1.squarespace.com/static/63c867491abe131843b09837/t/666102622741f53c52efe2a3/1717633634608/arrow-icon.png" width="15px" alt="arrow-icon">
             </button>
           </p>
@@ -53,6 +59,7 @@
           <form id="question-submit" onsubmit="return false">
             <input id="question" name="question" type="text" placeholder="Send a message">
             <button type="submit">
+              <!-- The image source for the element below needs to replaced with the new image url for 'new-send-icon.png' -->
               <img id="submit-button" src="https://static1.squarespace.com/static/63c867491abe131843b09837/t/6661021da740ba529a2efbcf/1717633565083/new-send-icon.png" width="20px" alt="send-icon">
             </button>
           </form>
@@ -60,6 +67,7 @@
       </section>
     </section>
     <section id="closed-form">
+      <!-- The image source for the element below needs to replaced with the new image url for 'chat-box.png' -->
       <img src="https://static1.squarespace.com/static/63c867491abe131843b09837/t/666102377e5542291ecab196/1717633591508/chat-box.png" alt="chat-box" width="30px">
     </section>
   </section>
@@ -93,6 +101,7 @@
         document.querySelector("#chat-bot-form").remove();
         document.querySelector("#chat-bot-text").style.display = "block";
         const image = document.createElement("img");
+        //The image source for the element below needs to replaced with the new image url for 'orangelogo.png'. 
         image.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666101dbc1213b64291b77d0/1717633499269/orangelogo.png";
         image.alt = "24/7-teach-logo";
         image.style.height = "30px";
@@ -140,6 +149,7 @@
       document.querySelector("#question-submit button[type='submit']").onclick = function() {
         const newTextBox = document.createElement("p");
         const firstImage = document.createElement("img");
+        //The image source for the element below needs to replaced with the new image url for 'user-icon.png'. 
         firstImage.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666102897e88f94351914a1e/1717633673474/user-icon.png";
         firstImage.alt = "user-icon";
         firstImage.style.width = "30px";
@@ -150,6 +160,7 @@
         newTextBox.style.color = "white";
     	newTextBox.style.backgroundColor = "rgb(48, 69, 92)";
         const secondImage = document.createElement("img");
+        //The image source for the element below needs to replaced with the new image url for 'orangelogo.png'. 
         secondImage.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666101dbc1213b64291b77d0/1717633499269/orangelogo.png";
         secondImage.alt = "24/7-teach-logo";
         secondImage.style.height = "30px";
@@ -166,6 +177,7 @@
       document.querySelector("#prompt1").onclick = function() {
         const newTextBox = document.createElement("p");
         const firstImage = document.createElement("img");
+        //The image source for the element below needs to replaced with the new image url for 'user-icon.png'. 
         firstImage.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666102897e88f94351914a1e/1717633673474/user-icon.png";
         firstImage.alt = "user-icon";
         firstImage.style.width = "30px";
@@ -176,6 +188,7 @@
        	newTextBox.style.color = "white";
     	newTextBox.style.backgroundColor = "rgb(48, 69, 92)";
         const secondImage = document.createElement("img");
+        //The image source for the element below needs to replaced with the new image url for 'orangelogo.png'. 
         secondImage.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666101dbc1213b64291b77d0/1717633499269/orangelogo.png";
         secondImage.alt = "24/7-teach-logo";
         secondImage.style.height = "30px";
@@ -191,6 +204,7 @@
       document.querySelector("#prompt2").onclick = function() {
         const newTextBox = document.createElement("p");
         const firstImage = document.createElement("img");
+        //The image source for the element below needs to replaced with the new image url for 'user-icon.png'. 
         firstImage.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666102897e88f94351914a1e/1717633673474/user-icon.png";
         firstImage.alt = "user-icon";
         firstImage.style.width = "30px";
@@ -201,6 +215,7 @@
         newTextBox.style.color = "white";
     	newTextBox.style.backgroundColor = "rgb(48, 69, 92)";
         const secondImage = document.createElement("img");
+        //The image source for the element below needs to replaced with the new image url for 'orangelogo.png'. 
         secondImage.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666101dbc1213b64291b77d0/1717633499269/orangelogo.png";
         secondImage.alt = "24/7-teach-logo";
         secondImage.style.height = "30px";
@@ -216,6 +231,7 @@
       document.querySelector("#prompt3").onclick = function() {
         const newTextBox = document.createElement("p");
         const firstImage = document.createElement("img");
+        //The image source for the element below needs to replaced with the new image url for 'user-icon.png'. 
         firstImage.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666102897e88f94351914a1e/1717633673474/user-icon.png";
         firstImage.alt = "user-icon";
         firstImage.style.width = "30px";
@@ -226,6 +242,7 @@
         newTextBox.style.color = "white";
     	newTextBox.style.backgroundColor = "rgb(48, 69, 92)";
         const secondImage = document.createElement("img");
+        //The image source for the element below needs to replaced with the new image url for 'orangelogo.png'. 
         secondImage.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666101dbc1213b64291b77d0/1717633499269/orangelogo.png";
         secondImage.alt = "24/7-teach-logo";
         secondImage.style.height = "30px";
@@ -292,6 +309,7 @@ function requestResponse() {
     const responses = JSON.parse(this.responseText)
     responses.forEach((i) => {
       const image = document.createElement("img");
+      //The image source for the element below needs to replaced with the new image url for 'orangelogo.png'. 
       image.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666101dbc1213b64291b77d0/1717633499269/orangelogo.png";
       image.alt = "24/7-teach-logo";
       image.style.height = "30px";
