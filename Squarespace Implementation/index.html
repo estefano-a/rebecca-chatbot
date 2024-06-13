@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <section id="chat-bot">
+    <section id="open-form">
+      <header>
+        <img id="header-logo" src="https://static1.squarespace.com/static/63c867491abe131843b09837/t/666101dbc1213b64291b77d0/1717633499269/orangelogo.png" width="40px" alt="24/7 Teach logo">
+        <div>
+          <span>Rebecca-AI</span>
+          <span id="short-intro">Our AI powered chatbot can assist you.</span>
+        </div>
+        <section id="header-buttons">
+          <button id="chat-bot-close" class="chat-bot-button">
+            <img src="https://static1.squarespace.com/static/63c867491abe131843b09837/t/66610245ec63620c508bbaae/1717633605834/x-icon.png" width="15px" alt="x">
+          </button>
+        </section>
+      </header>
+      <section id="chat-bot-form">
+        <p>Welcome to 24/7 live support. Our bot should be able to answer any questions you might have, but our customer support team is always available to help! Before we begin, please provide us with your email and name to better support you.</p>
+        <form id="start-chat-submit" onsubmit="return false">
+        	<label for= "name">Name:</label>
+			<input id="name" name="name" type="text">
+          	<label for = "email">Email:</label>
+			<input id="email" name="email" type="email">
+          <button type="submit">Start the chat</button>
+        </form>
+      </section>
+      <section id="chat-bot-text">
+        <section id="messages">
+          <img src="https://static1.squarespace.com/static/63c867491abe131843b09837/t/666101dbc1213b64291b77d0/1717633499269/orangelogo.png" width="30px" alt="24/7-teach-logo">
+          <p>Welcome to the chat! My name is Rebecca and I'm here to help you.<br>
+            <b>Stuck? Try a prompt:</b>
+            <button id="prompt1" value="What is 24/7 Teach's goal?">
+              <u><b>What is 24/7 Teach's goal?</b></u>
+              <img src="https://static1.squarespace.com/static/63c867491abe131843b09837/t/666102622741f53c52efe2a3/1717633634608/arrow-icon.png" width="15px" alt="arrow-icon">
+            </button>
+            <button id="prompt2" value="How much does the UX/UI design course cost?">
+              <u><b>How much does the UX/UI design course cost?</b></u>
+              <img src="https://static1.squarespace.com/static/63c867491abe131843b09837/t/666102622741f53c52efe2a3/1717633634608/arrow-icon.png" width="15px" alt="arrow-icon">
+            </button>
+            <button id="prompt3" value="What types of course does 24/7 Teach offer?">
+              <u><b>What types of course does 24/7 Teach offer?</b></u>
+              <img src="https://static1.squarespace.com/static/63c867491abe131843b09837/t/666102622741f53c52efe2a3/1717633634608/arrow-icon.png" width="15px" alt="arrow-icon">
+            </button>
+          </p>
+        </section>
+        <section id="submission-border">
+          <form id="question-submit" onsubmit="return false">
+            <input id="question" name="question" type="text" placeholder="Send a message">
+            <button type="submit">
+              <img id="submit-button" src="https://static1.squarespace.com/static/63c867491abe131843b09837/t/6661021da740ba529a2efbcf/1717633565083/new-send-icon.png" width="20px" alt="send-icon">
+            </button>
+          </form>
+        </section>
+      </section>
+    </section>
+    <section id="closed-form">
+      <img src="https://static1.squarespace.com/static/63c867491abe131843b09837/t/666102377e5542291ecab196/1717633591508/chat-box.png" alt="chat-box" width="30px">
+    </section>
+  </section>
+
+  <script type="module">
+    function setCookie(cname, cvalue, exdays) {
+      const d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      let expires = "expires=" + d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname) {
+      let name = cname + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    function updateForCookies() {
+        const form = document.querySelector("#messages");
+        document.querySelector("#chat-bot-form").remove();
+        document.querySelector("#chat-bot-text").style.display = "block";
+        const image = document.createElement("img");
+        image.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666101dbc1213b64291b77d0/1717633499269/orangelogo.png";
+        image.alt = "24/7-teach-logo";
+        image.style.height = "30px";
+        const newTextBox = document.createElement("p");
+        newTextBox.textContent = `Hello, we're glad to have you back`;
+        newTextBox.height = "min-content";
+        form.append(image, newTextBox);
+        updateGlobalName(getCookie("name"));
+    }
+
+    window.onload = function() {
+      let liveChat = false;
+      document.querySelector("#chat-bot-close").onclick = function() {
+        document.querySelector("#open-form").style.display = "none";
+        document.querySelector("#closed-form").style.display = "block";
+      }
+      document.querySelector("#closed-form").onclick = function() {
+        this.style.display = "none";
+        document.querySelector("#open-form").style.display = "block";
+        document.querySelector("#chat-bot-drop-down-content").style.display = "none";
+        document.querySelector("#chat-bot-text").style.display = "block";
+        if (!document.querySelector("#chat-bot-text").style.display == "block") {
+          document.querySelector("#chat-bot-form").style.display = "block";
+        }
+      }
+      document.querySelector("#start-chat-submit button[type='submit']").onclick = function() {
+        const form = document.forms["start-chat-submit"];
+        const name = form.elements[0].value;
+        const email = form.elements[1].value;
+        if (name != "" && email != "") {
+          sendUserInfo(name, email);
+          document.querySelector("#chat-bot-form").remove();
+          document.querySelector("#chat-bot-text").style.display = "block";
+          if (document.querySelector("#chat-bot-drop-down-content p") != null) {
+            document.querySelector("#chat-bot-drop-down-content p").remove();
+          }
+          setCookie("name", name, 10);
+        } else if (document.querySelector("#start-chat-submit p") == null) {
+          const errorMessage = document.createElement("p");
+          errorMessage.textContent = "Please submit a valid name and email";
+          errorMessage.style.color = "red";
+          form.replaceChild(errorMessage, form.childNodes[7]);
+        }
+      }
+      document.querySelector("#question-submit button[type='submit']").onclick = function() {
+        const newTextBox = document.createElement("p");
+        const firstImage = document.createElement("img");
+        firstImage.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666102897e88f94351914a1e/1717633673474/user-icon.png";
+        firstImage.alt = "user-icon";
+        firstImage.style.width = "30px";
+        const form = document.querySelector("#messages");
+        const question = document.querySelector("#question-submit").elements[0].value;
+        newTextBox.textContent = question;
+        newTextBox.style.height = "min-content";
+        newTextBox.style.color = "white";
+    	newTextBox.style.backgroundColor = "rgb(48, 69, 92)";
+        const secondImage = document.createElement("img");
+        secondImage.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666101dbc1213b64291b77d0/1717633499269/orangelogo.png";
+        secondImage.alt = "24/7-teach-logo";
+        secondImage.style.height = "30px";
+        form.append(firstImage, newTextBox);
+        if (!liveChat) {
+          form.append(secondImage);
+          callChatBot(question);
+        } else {
+          callLiveRepresentative(question);
+        }
+        document.querySelector("#question-submit").elements[0].value = "";
+      }
+
+      document.querySelector("#prompt1").onclick = function() {
+        const newTextBox = document.createElement("p");
+        const firstImage = document.createElement("img");
+        firstImage.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666102897e88f94351914a1e/1717633673474/user-icon.png";
+        firstImage.alt = "user-icon";
+        firstImage.style.width = "30px";
+        const form = document.querySelector("#messages");
+        const question = document.querySelector("#prompt1").value;
+        newTextBox.textContent = question;
+        newTextBox.style.height = "min-content";
+       	newTextBox.style.color = "white";
+    	newTextBox.style.backgroundColor = "rgb(48, 69, 92)";
+        const secondImage = document.createElement("img");
+        secondImage.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666101dbc1213b64291b77d0/1717633499269/orangelogo.png";
+        secondImage.alt = "24/7-teach-logo";
+        secondImage.style.height = "30px";
+        form.append(firstImage, newTextBox);
+        if (!liveChat) {
+          form.append(secondImage);
+          callChatBot(question);
+        } else {
+          callLiveRepresentative(question);
+        }
+      }
+
+      document.querySelector("#prompt2").onclick = function() {
+        const newTextBox = document.createElement("p");
+        const firstImage = document.createElement("img");
+        firstImage.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666102897e88f94351914a1e/1717633673474/user-icon.png";
+        firstImage.alt = "user-icon";
+        firstImage.style.width = "30px";
+        const form = document.querySelector("#messages");
+        const question = document.querySelector("#prompt2").value;
+        newTextBox.textContent = question;
+        newTextBox.style.height = "min-content";
+        newTextBox.style.color = "white";
+    	newTextBox.style.backgroundColor = "rgb(48, 69, 92)";
+        const secondImage = document.createElement("img");
+        secondImage.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666101dbc1213b64291b77d0/1717633499269/orangelogo.png";
+        secondImage.alt = "24/7-teach-logo";
+        secondImage.style.height = "30px";
+        form.append(firstImage, newTextBox);
+        if (!liveChat) {
+          form.append(secondImage);
+          callChatBot(question);
+        } else {
+          callLiveRepresentative(question);
+        }
+      }
+
+      document.querySelector("#prompt3").onclick = function() {
+        const newTextBox = document.createElement("p");
+        const firstImage = document.createElement("img");
+        firstImage.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666102897e88f94351914a1e/1717633673474/user-icon.png";
+        firstImage.alt = "user-icon";
+        firstImage.style.width = "30px";
+        const form = document.querySelector("#messages");
+        const question = document.querySelector("#prompt3").value;
+        newTextBox.textContent = question;
+        newTextBox.style.height = "min-content";
+        newTextBox.style.color = "white";
+    	newTextBox.style.backgroundColor = "rgb(48, 69, 92)";
+        const secondImage = document.createElement("img");
+        secondImage.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666101dbc1213b64291b77d0/1717633499269/orangelogo.png";
+        secondImage.alt = "24/7-teach-logo";
+        secondImage.style.height = "30px";
+        form.append(firstImage, newTextBox);
+        if (!liveChat) {
+          form.append(secondImage);
+          callChatBot(question);
+        } else {
+          callLiveRepresentative(question);
+        }
+      }
+      
+      updateForCookies();
+    };
+
+    window.onbeforeunload = function() {
+      closeWindow();
+    };
+    
+    var globalName = "";
+
+function updateGlobalName(value) {
+  globalName = value;
+}
+
+function callChatBot(str) {
+  const message = new XMLHttpRequest();
+  message.onload = function() {
+    const box = document.createElement("p");
+    box.textContent = this.responseText;
+    box.style.height = "min-content";
+    document.querySelector("#messages").append(box)
+  }
+  message.open("POST", "https://customerchatbot.onrender.com");
+  const object = {request: "callChatBot", name: globalName, message: str}
+  message.send(JSON.stringify(object));
+}
+
+function callLiveRepresentative(str) {
+  const message = new XMLHttpRequest();
+  message.open("POST", "https://customerchatbot.onrender.com");
+  const object = {request: "message", name: globalName, message: str, recipient: "customerRep"}
+  message.send(JSON.stringify(object));
+}
+
+function sendUserInfo(name, email) {
+  globalName = name;
+  const message = new XMLHttpRequest();
+  message.open("POST", "https://customerchatbot.onrender.com");
+  const object = {request: "addUser", name: globalName, email: email} 
+  message.send(JSON.stringify(object));
+}
+
+function addToLiveChat() {
+  const message = new XMLHttpRequest()
+  message.open("POST", "https://customerchatbot.onrender.com")
+  const object = {request: "addUserToLiveChat", name: globalName}
+  message.send(JSON.stringify(object))
+}
+
+function requestResponse() {
+  const message = new XMLHttpRequest();
+  message.onload = function() {
+    const responses = JSON.parse(this.responseText)
+    responses.forEach((i) => {
+      const image = document.createElement("img");
+      image.src = "https://static1.squarespace.com/static/63c867491abe131843b09837/t/666101dbc1213b64291b77d0/1717633499269/orangelogo.png";
+      image.alt = "24/7-teach-logo";
+      image.style.height = "30px";
+      const paragraph = document.createElement("p");
+      paragraph.textContent = i;
+      paragraph.style.height = "min-content";
+      document.querySelector("#messages").append(image, paragraph);
+    })
+  }
+  message.open("POST", "https://customerchatbot.onrender.com");
+  const object = {request: "reloadMessages", name: globalName, recipient: "customerRep"}
+  message.send(JSON.stringify(object));
+}
+
+function closeWindow() {
+  const message = new XMLHttpRequest();
+  message.open("POST", "https://customerchatbot.onrender.com");
+  const object = {request: "removeUser", name: globalName}
+  message.send(JSON.stringify(object));
+}
+  </script>
+</body>
+</html>
