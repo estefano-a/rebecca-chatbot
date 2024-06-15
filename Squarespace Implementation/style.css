@@ -8,18 +8,20 @@
     width: 300px;
     font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     display: none;
+    z-index: 9999;
   }
   #closed-form {
     position: fixed;
     background-color: #CC745A;
     bottom: 20px;
     left: 20px;
-    width: 55px;
-    height: 55px;
+    width: 30px;
+    height: 30px;
     padding: 10px;
     border-style: solid;
     border-color: #CC745A;
     border-radius: 35px;
+    z-index: 9999;
   }
   /* Header */
   #chat-bot header * {
