@@ -8,6 +8,7 @@
   width: 300px;
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   display: none;
+  z-index: 9999;
 }
 #closed-form {
   position: fixed;
@@ -20,6 +21,7 @@
   border-style: solid;
   border-color: #CC745A;
   border-radius: 35px;
+  z-index: 9999;
 }
 /* Header */
 #chat-bot header * {
@@ -39,28 +41,11 @@
   margin-left: 15px;
 }
 
-#header-buttons {
-  border-color: white;
-  border-style: solid;
-  height: 65%;
-  width: 40px;
-  float:inline-end;
-  margin-right: 40px;
-  margin-bottom: 25px;
-  margin-top: 10px;
-  border-radius: 8px;
-  background-color: #63697A;
-}
-
 #chat-bot header span {
   width: 150px;
   color: white;
   font-weight: 700;
   text-align: left;
-}
-
-#chat-bot header button {
-  vertical-align: middle;
 }
 
 #chat-bot header div {
@@ -71,29 +56,26 @@
 }
 
 #short-intro {
-  font-size: 10px;
+  font-size: 12px;
   overflow-x: wrap;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
-.chat-bot-button {
-  all: unset;
-  border-radius: 3px;
-}
 .chat-bot-button:hover {
   background-color: lightgray;
-  opacity: 20%;
+  opacity: 60%;
   background: no-repeat;
-}
-#chat-bot-extra {
-  position: relative;
-  display: inline-block;
-  margin-left: 16%;
-  margin-top: 12px;
 }
 
 #chat-bot-close {
-  margin-left: 26%;
+  height: 30%;
+  width: 30px;
+  float:inline-end;
+  margin-right: 10px;
+  margin-bottom: 25px;
+  margin-top: 10px;
+  border-radius: 8px;
+  background-color: #63697A;
 }
 
 /* Form */
@@ -103,8 +85,9 @@
   background-color: #EAF0F3;
   border-radius: 5px;
   padding: 5px;
-  height: 305.5px;
+  height: 200px;
 }
+
 #chat-bot-text {
   display: none;
   font-size: 14px;
@@ -192,36 +175,81 @@ button[type="submit"]:hover {
 /* Submitting Questions */
 #question-submit {
   position: absolute;
-  bottom: 15px;
-  width: 270px;
-  content: "Send a message";
+  bottom: 3px;
+  width: 230px;
+  left: 5px;
+  padding: 5px;
 }
-#question-submit button[type="submit"] {
-  position:absolute ;
-  right: 3%;
-  bottom: 2px;
-  width: 10%;
-  height: 27px;
-  background-color: #f59070;
-}
-/* Drop Down */
-#chat-bot-drop-down-content {
-  display: none;
+
+#submission-border {
+  background-color: #30455C;
+  height: 50px;
+  top: 415px;
+  width: 300px;
   position: absolute;
-  z-index: 1;
-  margin-top: 10px;
-  width: 100%;
 }
+
+#question-submit button[type="submit"] {
+  position: absolute;
+  width: 40px;
+  height: 31.5px;
+  border-radius: 10px;
+  left: 240px;
+}
+
+#submit-button {
+  margin-left: 4px;
+  margin-top: -10px;
+  position: fixed;
+}
+
+/* Drop Down */
+#chat-bot-drop-down {
+  border: solid;
+  border-color: white;
+  height: 50%;
+  border-radius: 0px 0px 8px 8px;
+  width: 20px;
+  height: 38px;
+  margin-top: 35px;
+  right: 40.5px;
+  position: absolute;
+}
+
+#chat-bot-drop-down-content {
+  display: grid;
+  position:fixed;
+  z-index: 1;
+  margin-top: 8px;
+  width: 300px;
+  left: 0;
+  margin-left: 20px;
+}
+
+#chat-bot-drop-down-content::before{
+  content: " ";
+  position: absolute;
+  top: -15px;
+  left: 79%;
+  border: 10px solid transparent;
+  border-bottom-color: #A7B1C2;
+}
+
 #chat-bot-drop-down-content * {
   all: unset;
-  background-color: #EAF0F3;
+  background-color: #A7B1C2;
   font-size: 14px;
-  margin: 0;
   padding: 5px;
   font-weight: 400;
   width: 100%;
   box-sizing: border-box;
+  float: left;
+  color: white;
+  text-align: center;
+  height: 30px;
+  vertical-align: middle;
 }
+
 #chat-bot-drop-down-content button:hover {
-  background-color: #c7cccf;
+  color: black;
 }
